@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="Online Data Analysis for .CSV, Excel, and JSON">
+    <meta name="description"
+        content="Free online data analysis for CSV, Excel, JSON. Get graphs, plots, & stats on NA values, mode, median, mean, SD, & outliers.">
+    <meta name="keywords"
+        content="free online tool for data analysis of CSV, online data insights checker, online data statistics value checker">
+    <title>Online Data Analysis for .CSV, Excel, and JSON</title>
+
+    <link rel="icon" type="image/x-icon" href="static/img/logo.png" />
+    <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+    <link rel="canonical" href="https://aaaenos.com/tools/data-analysis-and-cleaning/" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://aaaenos.com/tools/data-analysis-and-cleaning/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Online Data Analysis">
+    <meta property="og:description"
+        content="Free online data analysis for CSV, Excel, JSON. Get graphs, plots, & stats on NA values, mode, median, mean, SD, & outliers.">
+    <meta property="og:image" content="https://aaaenos.com/tools/data-analysis-and-cleaning/static/img/logo.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="aaaenos.com">
+    <meta property="twitter:url" content="https://aaaenos.com/tools/data-analysis-and-cleaning/">
+    <meta name="twitter:title" content="Online Data Analysis">
+    <meta name="twitter:description"
+        content="Free online data analysis for CSV, Excel, JSON. Get graphs, plots, & stats on NA values, mode, median, mean, SD, & outliers.">
+    <meta name="twitter:image" content="https://aaaenos.com/tools/data-analysis-and-cleaning/static/img/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Online Data Analysis",
+            "url": "https://aaaenos.com/tools/data-analysis-and-cleaning/",
+            "description": "Free online data analysis for CSV, Excel, JSON. Get graphs, plots, & stats on NA values, mode, median, mean, SD, & outliers.",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "All",
+            "creator": {
+                "@type": "Organization",
+                "name": "AAAeNOS Tools"
+            }
+        }
+    </script>
+
+    <!--Google Analytics code-->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WVW5BZF5V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1WVW5BZF5V');
+    </script> -->
+
+</head>
+
+
+<body>
+    <header>
+        <div class="header_child">
+            <strong class="logo_txt">Data Analysis</strong>
+        </div>
+        <div class="header_child">
+            <a href="aaaenos.com/tools/" class="btn">Tools</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- upload file  -->
+        <div class="accordion">
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <span class="title">Upload File</span>
+                    <span class="icon">-</span>
+                </div>
+                <div class="accordion-content">
+                    <!-- upload area  -->
+                    <div class="upload-area">
+                        <label for="file">Drag file here or <span
+                                style="color: blue; font-weight: 500;">browse</span></label>
+                        <input type="file" id="file" name="file" accept=".csv, .xls, .xlsx, .json" hidden />
+                    </div>
+
+                    <!-- status of file upload  -->
+                    <div class="upload_status_container">
+                        <div class="file-item">
+                            <div class="file-icon">CSV</div>
+                            <div class="file-details">
+                                <div class="file-name" id="fileName">file_name.csv</div>
+                                <div class="file-status" id="fileStatus">Parsing...</div>
+                                <div class="progress-bar">
+                                    <div class="progress" id="progress"></div>
+                                </div>
+                            </div>
+                            <button class="cancel-button" id="cancelButton"></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <section class="dynamic_container"></section>
+        
+
+        <!-- feature section for how to use -->
+        <div class="feature_section">
+            <div class="feature_heading">
+                <h1 class="title">How to use?</h1>
+                <p class="note">To improve your analysis, follow these simple steps to visualize or clean your data
+                    effectively.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <img src="static/img/upload_icon.svg" alt="upload file" class="feature-icon">
+                    <h3 class="feature-title">Upload File</h3>
+                    <p class="feature-description">Easily upload your data files in various formats such as CSV,
+                        XLSX,
+                        XLS, and JSON.</p>
+                </div>
+                <div class="feature">
+                    <img src="static/img/data_info.svg" alt="data info" class="feature-icon">
+                    <h3 class="feature-title">Data Info</h3>
+                    <p class="feature-description">Get detailed insights into your data, including NaN values,
+                        unique
+                        values, outliers, and statistical measures.</p>
+                </div>
+                <div class="feature">
+                    <img src="static/img/prepare_data.svg" alt="prepare data" class="feature-icon">
+                    <h3 class="feature-title">Process to clean</h3>
+                    <p class="feature-description">Select or fill in values for each column to prepare your data for
+                        a
+                        thorough cleaning process.</p>
+                </div>
+                <div class="feature">
+                    <img src="static/img/data_cleaned.svg" alt="cleaned data" class="feature-icon">
+                    <h3 class="feature-title">Clean successfully</h3>
+                    <p class="feature-description">Your data is now cleaned and ready for download, along with
+                        helpful
+                        visualizations for analysis.</p>
+                </div>
+                <div class="feature">
+                    <img src="static/img/data_analysis.svg" alt="data analysis" class="feature-icon">
+                    <h3 class="feature-title">Data Visualize</h3>
+                    <p class="feature-description">Visualize your data with various charts and graphs to gain a
+                        better
+                        understanding of its patterns.</p>
+                </div>
+                <div class="feature">
+                    <img src="static/img/download_icon.svg" alt="data analysis" class="feature-icon">
+                    <h3 class="feature-title">Download</h3>
+                    <p class="feature-description">Download charts and graphs for presentations or further analysis
+                        in
+                        your preferred format.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- about this tool  -->
+        <div class="feature_section" id="about_this_tool">
+            <div class="feature_heading">
+                <h2 class="title underline_heading">About this tool</h2>
+            </div>
+            <p class="note">This open-source data cleaning, analysis, and visualization tool is designed to
+                streamline
+                your workflow and make data-related tasks significantly easier. It empowers you to gain deep
+                insights
+                into your data by providing comprehensive statistical analysis, including key metrics like mean,
+                mode,
+                median, and identification of NaN (Not a Number) values and outliers. <br><br>
+
+                Beyond analysis, the tool offers robust data cleaning capabilities. You can effortlessly handle
+                missing
+                data by filling or removing NaN values, apply custom removal conditions based on your specific
+                needs,
+                and manage outliers to ensure data accuracy. The tool also allows you to compare your data before
+                and
+                after cleaning, giving you a clear view of the improvements made. <br><br>
+
+                A key advantage of this tool is its local operation. All processing occurs directly within your
+                browser,
+                ensuring the privacy and security of your data. Because it works locally, you can even use it
+                offline
+                once the page has loaded, allowing you to analyze and clean countless datasets without an internet
+                connection. <br><br>
+
+                Currently, the tool supports tabular data formats, including CSV, XLSX, XLS, and JSON. If your data
+                is
+                in a different format, you can easily convert it to a supported format and then upload it to the
+                tool
+                for analysis. There are no limitations on file size or the number of attempts, giving you the
+                freedom to
+                work with your data as needed.</p>
+        </div>
+
+
+        <!-- faq section  -->
+        <div class="feature_section" id="faq_section">
+            <div class="feature_heading">
+                <h3 class="title underline_heading">FAQs</h3>
+            </div>
+
+            <div class="faq_parent_ul">
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_1" />
+                    <label for="faq_child_1">What is this data cleaner & analyzer tool?</label>
+                    <div class="ans_content">
+                        <p>
+                            This is an open-source web-based tool designed to simplify data cleaning, analysis, and
+                            visualization. It helps you gain insights into your data, clean it effectively, and
+                            visualize the results.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_2" />
+                    <label for="faq_child_2">Is this tool free to use?</label>
+                    <div class="ans_content">
+                        <p> Yes, this tool is open-source and free to use.</p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_3" />
+                    <label for="faq_child_3">Do I need to install anything to use this tool?</label>
+                    <div class="ans_content">
+                        <p>No, as a web-based tool, it runs directly in your web browser. No installation is
+                            required.</p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_4" />
+                    <label for="faq_child_4">Does this tool work offline?</label>
+                    <div class="ans_content">
+                        <p>Yes, once the web page is loaded, the tool works offline, allowing you to analyze and
+                            clean data even without an internet connection.</p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_5" />
+                    <label for="faq_child_5">Is my data secure when using this tool? </label>
+                    <div class="ans_content">
+                        <p> Yes, all data processing happens locally within your browser. Your data is never
+                            uploaded to any external servers, ensuring complete privacy and security.</p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_6" />
+                    <label for="faq_child_6">What file formats are supported?</label>
+                    <div class="ans_content">
+                        <p>The tool currently supports tabular data formats, including CSV, XLSX, XLS, and JSON.</p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_7" />
+                    <label for="faq_child_7">What if my data is not in a supported format?</label>
+                    <div class="ans_content">
+                        <p>ou can convert your data to one of the supported formats (CSV, XLSX, XLS, or JSON) using
+                            other tools or software and then upload it to this tool.</p>
+                    </div>
+                </div>
+
+                <div class="li">
+                    <input type="radio" name="per_item_faq" id="faq_child_8" />
+                    <label for="faq_child_8">Are there any limitations on file size or the number of
+                        uploads?</label>
+                    <div class="ans_content">
+                        <p>No, there are no limits on file size or the number of times you can use the tool.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </main>
+    <footer>
+        <p class="note">This free, open-source online tool provides insights into your data.</p>
+    </footer>
+
+    <!-- error message display  -->
+    <div class="error_message_parent">
+        <span class="message_details"></span>
+        <span class="close_btn">x</span>
+    </div>
+
+    <!-- script inlcude  -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/plotly.js-basic-dist@2.35.3/plotly-basic.min.js" defer></script>
+    <script src="static/script/script.js"></script>
+</body>
+
+</html>
